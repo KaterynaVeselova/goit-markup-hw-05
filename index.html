@@ -17,7 +17,27 @@
 		/>
 		<link rel="stylesheet" href="./css/styles.css" />
 	</head>
-	<body>
+	<body data-page>
+		<!-- <button class="fxd-button" type="button">
+			<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+				<path
+					d="M256 0C114.6 0 0 114.6 0 256c0 141.4 114.6 256 256 256s256-114.6 256-256C512 114.6 397.4 0 256 0zM382.6 254.6c-12.5 12.5-32.75 12.5-45.25 0L288 205.3V384c0 17.69-14.33 32-32 32s-32-14.31-32-32V205.3L174.6 254.6c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l103.1-103.1C241.3 97.4 251.1 96 256 96c4.881 0 14.65 1.391 22.65 9.398l103.1 103.1C395.1 221.9 395.1 242.1 382.6 254.6z"
+				/>
+			</svg>
+		</button> -->
+		<script>
+			const { pageHeaderHeight } = document.querySelector(".header").getBoundingClientRect();
+			document.body.style.paddingTop = `${pageHeaderHeight}px`;
+		</script>
+		<div class="backdrop is-hidden" data-modal>
+			<div class="modal">
+				<button class="btn-close-modal" type="button" data-modal-close>
+					<svg class="btn-close-black" width="18" height="18">
+						<use href="./images/icons.svg#btn-close-black"></use>
+					</svg>
+				</button>
+			</div>
+		</div>
 		<header class="header">
 			<div class="container main-nav">
 				<!-- logo element, returns to the main page-->
@@ -66,7 +86,7 @@
 						<!-- <br /> -->
 						для вашего бизнеса
 					</h1>
-					<button class="hero-btn" type="button">Заказать услугу</button>
+					<button class="hero-btn" type="button" data-modal-open>Заказать услугу</button>
 				</div>
 			</section>
 			<!-- features -->
@@ -128,12 +148,15 @@
 					<ul class="works list">
 						<li class="works-item">
 							<img class="image" src="./images/example1.jpg" width="370" height="294" alt="Пример 1 наших работ" />
+							<p class="works-description">Десктопные приложения</p>
 						</li>
 						<li class="works-item">
 							<img class="image" src="./images/example2.jpg" width="370" height="294" alt="Пример 2 наших работ" />
+							<p class="works-description">Мобильные приложения</p>
 						</li>
 						<li class="works-item">
 							<img class="image" src="./images/example3.jpg" width="370" height="294" alt="Пример 3 наших работ" />
+							<p class="works-description">Дизайнерские решения</p>
 						</li>
 					</ul>
 				</div>
@@ -534,5 +557,6 @@
 				</div>
 			</div>
 		</footer>
+		<script src="./js/modal.js"></script>
 	</body>
 </html>
