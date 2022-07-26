@@ -113,6 +113,32 @@ ul {
 
 /* header styles */
 /* header navigation */
+.header-nav {
+	margin-left: 93px;
+}
+.nav-list {
+	display: flex;
+	gap: 50px;
+}
+.nav-list .link {
+	/* position: relative; */
+	padding-top: 32px;
+	padding-bottom: 32px;
+
+	color: var(--secondary-header-color);
+
+	font-weight: 500;
+	line-height: 1.14;
+	letter-spacing: 0.02em;
+
+	display: block;
+	transition: color var(--animation);
+}
+.nav-list .link:hover,
+.nav-list .link:focus {
+	color: var(--accent-color);
+}
+
 .header-nav .link.current {
 	position: relative;
 	color: var(--accent-color);
@@ -143,30 +169,7 @@ ul {
 
 	color: var(--nav-text-color);
 }
-.header-nav {
-	margin-left: 93px;
-}
-.nav-list {
-	display: flex;
-	gap: 50px;
-}
-.nav-list .link {
-	padding-top: 32px;
-	padding-bottom: 32px;
 
-	color: var(--secondary-header-color);
-
-	font-weight: 500;
-	line-height: 1.14;
-	letter-spacing: 0.02em;
-
-	display: block;
-	transition: color var(--animation);
-}
-.nav-list .link:hover,
-.nav-list .link:focus {
-	color: var(--accent-color);
-}
 /* header contacts */
 .header-contacts {
 	margin-left: auto;
@@ -183,6 +186,8 @@ ul {
 	letter-spacing: 0.02em;
 
 	display: block;
+	color: var(--main-text-color);
+
 	transition: color var(--animation);
 }
 .header-contacts .link:hover,
@@ -196,20 +201,17 @@ ul {
 	align-items: center;
 	justify-content: center;
 	gap: 10px;
-
-	transition: fill var(--animation);
-}
-.contacts.link:hover {
-	fill: var(--accent-color);
 }
 .contacts .contacts-icon {
 	fill: var(--main-text-color);
 
 	transition: fill var(--animation);
 }
-.contacts:hover .contacts-icon {
+.contacts:hover .contacts-icon,
+.contacts:focus .contacts-icon {
 	fill: var(--accent-color);
 }
+
 /* main content styles */
 /* hero styles */
 .hero {
@@ -488,6 +490,7 @@ footer .logo-part {
 
 	color: var(--secondary-header-color);
 	background-color: var(--secondary-bcg-color);
+	box-shadow: 0px 3px 1px rgba(0, 0, 0, 0), 0px 1px 2px rgba(0, 0, 0, 0), 0px 2px 2px rgba(0, 0, 0, 0);
 
 	font-weight: 500;
 	font-size: 16px;
@@ -513,10 +516,11 @@ footer .logo-part {
 	/* outline: 1px solid rgb(231, 10, 124); */
 }
 
-.project-item {
+.project-item .link {
 	--items: 3;
 	min-width: 370px;
 	flex-basis: calc((100% - var(--indent) * (var(--items)-1)) / var(--items));
+	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0), 0px 4px 4px rgba(0, 0, 0, 0), 1px 4px 6px rgba(0, 0, 0, 0);
 
 	transition: box-shadow var(--animation);
 	/* outline: 1px solid rgb(154, 71, 255); */
